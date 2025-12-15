@@ -1,0 +1,445 @@
+/*For all pages*/
+
+
+/* Housekeeping */
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+
+a:link,
+a:visited {
+text-decoration: inherit;
+color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.bigcontainer {
+    height: 100%;
+    width:100%;
+}
+
+*::selection {
+  background: #FFFFC5;
+  color: #332a2a;
+}
+*::-moz-selection {
+  background: #FFFFC5;
+  color: #332a2a;
+}
+*::-webkit-selection {
+  background: #FFFFC5;
+  color: #332a2a;
+}
+
+/*@font-face {
+  font-family: Beauty; 
+  src: url(/fonts/BeautyDemo.otf); 
+}
+
+p {
+  font-family: Beauty; 
+  font-size: 25px;
+}
+
+.title {
+    font-family: Beauty;
+    font-size: 30px;
+    font-weight: bold;
+}*/
+
+/* Background */
+.backgroundimg {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    z-index: -3;
+}
+
+/* Borders */
+
+.border {
+    background-color: #332a2a;
+    mix-blend-mode: multiply;
+    opacity: 90%;
+}
+
+.border.btop {
+    position: relative;
+    top: 0;
+    height: 5%;
+    width: 100%;
+}
+
+.border.bdown {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.border.bmid {
+    width: 10%;
+    max-width: 100px;
+}
+
+/* Arrows */
+#my-arrows {
+    transform: scale(0.4);
+}
+
+.go-up {
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+}
+.aup {
+    justify-content: center;
+    transform: rotate(270deg);
+}
+
+.go-left {
+    align-content: center;
+    justify-content: left;
+    width: 20px;
+    margin: 3px;;
+}
+.aleft {
+    justify-items: center;
+    transform: rotate(180deg);  
+}
+
+.go-right {
+    align-content: center;
+    justify-content: center;
+    width: 20px;
+    margin: 3px;
+
+}
+.aright {
+    transform: scale(0deg);
+    justify-items: center;
+
+}
+
+.go-down {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adown {
+    transform: rotate(90deg);
+    position: absolute;
+    z-index: 6;
+}
+
+
+/* Map and Content*/
+.container-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    height: 85%;      
+}
+                  
+.box {
+    height: 100%;
+    position: relative;
+}
+
+.box.map {
+    width: 30%;
+    min-width: 300px;
+}
+
+.box.content {
+    width: 40%;
+    flex-grow: calc(1);
+    box-sizing: border-box;
+}
+    .content-header {
+        height: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+        .flag {
+            position: absolute;
+            right: 1.25%;
+            transform: scale(0.5);
+        }
+    .content-middle {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+        .content-text {
+            width: 80%;
+            flex-grow: calc(1);
+            padding: 2.5%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+
+
+/* Footer */
+.footer {
+    height: 10%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+    .timers {
+        /*display: flex;*/
+        display: none;
+        justify-content: space-evenly;
+        position: fixed;
+        bottom: 5%;
+        z-index: 1;
+        width: 100%;
+        color: white;
+    }
+
+    .timer {
+        color: white;
+    }
+
+
+/* Scary scaling stuff */
+
+ @media only screen and (max-width: 800px) { 
+
+.bmiddle {
+    display: none;
+}
+
+.container-middle {
+    position: relative;
+    width: 100%;   
+}
+
+.box {
+    width: 80%;
+    background-color: transparent;
+}
+
+.box.map {
+    background-color: transparent;
+    position: absolute;
+    width: 80%;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0%;
+}
+
+.box.map:target {
+    background-color: transparent;
+    visibility: visible;
+    opacity: 100%;
+}
+
+.content-text {
+    opacity: 0%;
+    position: absolute;
+    right: 10%;
+    height: 90%;
+    overflow: scroll;
+    transition: opacity 500ms;
+    visibility: hidden;
+
+}
+
+.content-text:target {
+    visibility: visible;
+    opacity: 100%;
+}
+
+.toggle {
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    bottom: -50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    cursor: pointer;
+    color: white;
+}
+
+.toggleinfo {
+    padding: 5px;
+
+
+}
+
+.togglemap {
+    padding: 5px;
+
+}
+
+ }
+
+@media only screen and (min-width: 800px) {
+    .toggle {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* my shapes #myshapes */
+
+/* #my arrows! */
+#my-arrows {
+        width: 35px;
+        height: 60px;
+        background-color: transparent;
+        position: relative;
+    }
+
+    #my-arrows::before,
+    #my-arrows::after {
+        content: '';
+        position: absolute;
+
+    }
+
+    #my-arrows:before  {
+        content:'';
+        position: absolute;
+        inset: 0 10px;
+        background: #332a2a;
+        height: 30px;
+        width: 15px;
+        transform: skew(40deg);
+    }
+    #my-arrows::after {
+        content:'';
+        position: absolute;
+        inset: 0 10px;
+        background: #332a2a;
+        height: 30px;
+        width: 15px;
+        transform: skew(-40deg) translateX(25px) translateY(30px);
+    }
+
+
+/* #my flag! */
+
+#my-flag {
+        height: 50px;
+        width: 40px;
+        position: relative;
+        background-color: transparent;
+    }
+    #my-flag::before {
+        content:'';
+        position: absolute;
+        height: 30px;
+        width: 40px;
+        background-color: #dbcdcd;;
+    }
+
+    #my-flag::after {
+        content:'';
+        position: absolute;
+        height: 50px;
+        width: 5px;;
+        background-color: #dbcdcd;;
+    }
+
+
+/* my batteryyyyyyy :D */
+/*
+#my-battery {
+        position: relative;
+        background-color: transparent;
+        height: 13px;
+        width: 25px;
+        border: 2px solid #dbcdcd;
+        border-radius: 10%;
+    }
+
+    #my-battery::after {
+        content: '';
+        position: absolute;
+        inset: 5%;
+        background-color: #dbcdcd;
+        height: 90%;
+        width: 85%;
+        animation-name: batterydrain;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes batterydrain {
+        0% {width: 85%;}
+        100% {width: 0%;}
+    }
+
+    #my-battery::before {
+        content: '';
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+        left: 105%;
+        background-color: #dbcdcd;
+        height: 60%;
+        width: 15%;
+    }*/
